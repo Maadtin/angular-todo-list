@@ -1,3 +1,15 @@
-<form (submit)="formSubmit">
+<form (submit)="onSubmit()" [formGroup]="todoData" class="todo-form">
+
+  <mat-form-field>
+    <input matInput placeholder="Nombre de tu tarea.." formControlName="nombre">
+  </mat-form-field>
+
+
+  <mat-checkbox class="todo-form-input" formControlName="done">
+    Hecho
+  </mat-checkbox>
+
+
+  <button type="submit" mat-raised-button color="accent">Añadir</button>
 
 </form>

@@ -1,12 +1,8 @@
-<div id="tooApp">
+<div id="todoApp">
 
+    <app-todo-form (formSubmit)="onFormSubmit($event)"></app-todo-form>
 
-    <app-todo-form (formSubmit)="onFormSubmit()"></app-todo-form>
-
-
-
-    <app-todo-list></app-todo-list>
-
+    <app-todo-list [todos]="todos"></app-todo-list>
 
 
 </div>

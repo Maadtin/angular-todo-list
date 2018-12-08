@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Todo} from '../models/Todo';
-import {FormBuilder} from '@angular/forms';
+import {Form, FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-todo-form',
@@ -9,17 +9,22 @@ import {FormBuilder} from '@angular/forms';
 })
 export class TodoFormComponent implements OnInit {
 
-  @Output() formSubmit = new EventEmitter<Todo>();
+  @Output() formSubmit: EventEmitter<Todo> = new EventEmitter<Todo>();
 
-  todoData: [];
+  public todoData: FormGroup;
 
   constructor (private fb: FormBuilder) {}
 
   ngOnInit() {
+    this.todoData = this.fb.group({
+      nombre: this.fb.control(''),
+      done: this.fb.control(false)
+    });
   }
 
   onSubmit () {
-    console.log('submit');
+    this.formSubmit.emit(this.todoData.value);
+    this.todoData.reset();
   }
 
 }

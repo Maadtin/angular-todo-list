@@ -1,0 +1,13 @@
+.todo-form {
+  padding: 1em;
+}
+
+.todo-form .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+
+.todo-form-input {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}

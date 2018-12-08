@@ -1,3 +1,7 @@
-<p>
-  todo-list works!
-</p>
+<mat-list class="todo-list" *ngIf="todos.length">
+  <h3 mat-subheader>Tareas por hacer</h3>
+  <mat-list-item *ngFor="let todo of todos">
+    <h4 mat-line>{{todo.nombre}}</h4>
+    <mat-checkbox [checked]="todo.done">Realizado</mat-checkbox>
+  </mat-list-item>
+</mat-list>

@@ -9,10 +9,11 @@ import {Todo} from './models/Todo';
 export class AppComponent {
 
 
-  todos: Todo[];
+  todos: Todo[] = [];
 
-  onFormSubmit() {
-
+  onFormSubmit(todo: Todo) {
+    console.log(todo);
+    this.todos.push(todo);
   }
 
 

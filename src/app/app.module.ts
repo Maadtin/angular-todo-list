@@ -5,18 +5,26 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
-import { TodoItemComponent } from './todo-item/todo-item.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoFormComponent,
-    TodoListComponent,
-    TodoItemComponent
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
